@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 $paragrafo = "Finalmente questa cazzo di settimana è finita! Buon weekend!!!";
+$paragrafoCensurato = str_replace($_GET["censura"], "***", $paragrafo);
 ?>
 
 <html lang="en">
@@ -15,11 +16,11 @@ $paragrafo = "Finalmente questa cazzo di settimana è finita! Buon weekend!!!";
 <body>
 
       <p>
-            <?php echo str_replace($_GET["censura"], "***", $paragrafo) ?>
+            <?php echo $paragrafoCensurato ?>
       </p>
 
       <p>
-            La lunghezza del paragrafo è di: <?php echo strlen($paragrafo) ?>
+            La lunghezza del paragrafo è di: <?php echo strlen($paragrafoCensurato) ?>
       </p>
 
       <form action="" method="GET">
